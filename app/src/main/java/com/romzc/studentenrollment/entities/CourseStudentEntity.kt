@@ -1,4 +1,4 @@
-package com.romzc.studentenrollment.data.entities
+package com.romzc.studentenrollment.entities
 
 import androidx.room.Entity
 

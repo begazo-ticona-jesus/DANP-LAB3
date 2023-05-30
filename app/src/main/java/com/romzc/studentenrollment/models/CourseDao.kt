@@ -1,12 +1,11 @@
-package com.romzc.studentenrollment.data.dao
+package com.romzc.studentenrollment.models
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Transaction
-import com.romzc.studentenrollment.data.entities.CourseEntity
-import com.romzc.studentenrollment.data.entities.CourseWithStudents
-import com.romzc.studentenrollment.data.entities.StudentEntity
+import com.romzc.studentenrollment.entities.CourseEntity
+import com.romzc.studentenrollment.entities.CourseWithStudents
 
 @Dao
 interface CourseDao {

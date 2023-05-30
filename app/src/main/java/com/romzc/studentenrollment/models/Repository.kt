@@ -1,9 +1,9 @@
-package com.romzc.studentenrollment.data
+package com.romzc.studentenrollment.models
 
-import com.romzc.studentenrollment.data.entities.CourseEntity
-import com.romzc.studentenrollment.data.entities.CourseStudentEntity
-import com.romzc.studentenrollment.data.entities.CourseWithStudents
-import com.romzc.studentenrollment.data.entities.StudentEntity
+import com.romzc.studentenrollment.entities.CourseEntity
+import com.romzc.studentenrollment.entities.CourseStudentEntity
+import com.romzc.studentenrollment.entities.CourseWithStudents
+import com.romzc.studentenrollment.entities.StudentEntity
 
 class Repository(private val appDatabase: AppDatabase) {
     suspend fun getAllCourses(): List<CourseEntity> {

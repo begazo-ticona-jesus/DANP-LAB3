@@ -13,11 +13,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.romzc.studentenrollment.data.AppDatabase
-import com.romzc.studentenrollment.data.Repository
-import com.romzc.studentenrollment.data.entities.CourseEntity
-import com.romzc.studentenrollment.data.entities.CourseWithStudents
-import com.romzc.studentenrollment.data.entities.StudentEntity
+import com.romzc.studentenrollment.models.AppDatabase
+import com.romzc.studentenrollment.models.Repository
+import com.romzc.studentenrollment.entities.CourseEntity
+import com.romzc.studentenrollment.entities.CourseWithStudents
+import com.romzc.studentenrollment.entities.StudentEntity
 import com.romzc.studentenrollment.ui.theme.StudentEnrollmentTheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

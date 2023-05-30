@@ -1,15 +1,12 @@
-package com.romzc.studentenrollment.data
+package com.romzc.studentenrollment.models
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.romzc.studentenrollment.data.dao.CourseDao
-import com.romzc.studentenrollment.data.dao.CourseStudentDao
-import com.romzc.studentenrollment.data.dao.StudentDao
-import com.romzc.studentenrollment.data.entities.CourseEntity
-import com.romzc.studentenrollment.data.entities.CourseStudentEntity
-import com.romzc.studentenrollment.data.entities.StudentEntity
+import com.romzc.studentenrollment.entities.CourseEntity
+import com.romzc.studentenrollment.entities.CourseStudentEntity
+import com.romzc.studentenrollment.entities.StudentEntity
 
 @Database(
     entities = [CourseEntity::class, StudentEntity::class, CourseStudentEntity::class],
