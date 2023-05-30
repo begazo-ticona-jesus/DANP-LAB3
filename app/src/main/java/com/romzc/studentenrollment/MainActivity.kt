@@ -44,24 +44,6 @@ class MainActivity : ComponentActivity() {
                     val repository = Repository(AppDatabase.getInstance(context.applicationContext))
                     val scope = rememberCoroutineScope()
 
-
-
-                if(screenState.value == "FILL") {
-                    Column(
-                        modifier = Modifier.padding(20.dp),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Button(onClick = { fillTables(repository, scope) }) {
-                            Text(text = "Fill Tables")
-                        }
-
-                        Button(onClick = { screenState.value = "VISUAL" }) {
-                            Text(text = "Visualize")
-                        }
-                    }
-                }
-                else {
                     LaunchedEffect(Unit) {
                         coroutineScope.launch {
                             val list = repository.getAllCoursesWithStudents()
@@ -73,14 +55,13 @@ class MainActivity : ComponentActivity() {
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Button(onClick = { screenState.value = "FILL" }) {
-                            Text(text = "Back")
+                        Button(onClick = { fillTables(repository, scope) }) {
+                            Text(text = "Implement")
                         }
                         if (coursestudents.value != null) {
                             VisulizeScreen(coursestudents = coursestudents.value!!)
                         }
                     }
-                }
             }
         }
     }
@@ -92,10 +73,11 @@ fun VisulizeScreen(coursestudents: List<CourseWithStudents>) {
         LazyColumn(contentPadding = PaddingValues(vertical = 8.dp, horizontal = 4.dp)) {
             items(coursestudents) { courseStudent ->
                 Spacer(modifier = Modifier.height(12.dp))
-                Card(backgroundColor = Color.Magenta) {
-                    Box(Modifier.padding(10.dp)) {
+                Card(backgroundColor = Color.DarkGray,
+                modifier = Modifier.fillMaxSize().padding(50.dp,10.dp)) {
+                    Box(Modifier.padding(50.dp)) {
                         Text(text = courseStudent.courseEntity.courseName)
-                        Column(Modifier.padding(top = 26.dp)) {
+                        Column(Modifier.padding(top=25.dp)) {
                             courseStudent.students.map { student ->
                                 Text(text = student.studentName)
                             }
@@ -112,8 +94,8 @@ fun fillTables(rep: Repository, scope: CoroutineScope) {
     val courses = ArrayList<CourseEntity>()
     val students = ArrayList<StudentEntity>()
 
-    for (i in 20..29) {
-        students.add(StudentEntity(i, studentName = "Name $i ${i+3}"))
+    for (i in 30..59) {
+        students.add(StudentEntity(i, studentName = "Name $i ${i*2}"))
     }
 
     scope.launch {
